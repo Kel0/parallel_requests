@@ -1,6 +1,6 @@
 # parallel_requests
 ## Perfomance
-See [benchmarks](https://github.com/Kel0/parallel_requests/blob/feature/3/benchmarks/)
+See [benchmarks](https://github.com/Kel0/parallel_requests/tree/master/benchmarks)
 
 ## Usage
 POST HTTP request usage:
