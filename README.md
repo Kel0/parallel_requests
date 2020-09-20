@@ -7,7 +7,7 @@ POST HTTP request usage:
 >>> from typing import List
 >>>
 >>>
->>> responses: parallel_requests.PostResponse = parallel_requests.post(
+>>> responses: parallel_requests.ListResponse = parallel_requests.post(
 >>>     method_args=[{"url": "https://www.python.org"}],
 >>>     max_workers=10
 >>> )
@@ -21,7 +21,7 @@ GET HTTP request usage
 >>> from typing import List
 >>>
 >>>
->>> responses: parallel_requests.PostResponse = parallel_requests.get(
+>>> responses: parallel_requests.ListResponse = parallel_requests.get(
 >>>     method_args=[{"url": "https://www.python.org"}],
 >>>     max_workers=10
 >>> )
@@ -35,7 +35,7 @@ request function usage:
 >>> from typing import List
 >>>
 >>>
->>> responses: parallel_requests.PostResponse = parallel_requests.request(
+>>> responses: parallel_requests.ListResponse = parallel_requests.request(
 >>>     method_args=[{"url": "https://www.python.org", "method": "post"}],
 >>>     max_workers=10
 >>> )
