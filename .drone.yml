@@ -9,3 +9,4 @@ steps:
       - pip install invoke
       - inv install
       - inv check
+      - inv test
