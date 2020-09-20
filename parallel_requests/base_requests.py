@@ -7,7 +7,7 @@ Async requests is a library which parallelize your requests.
 POST HTTP request usage:
     >>> import parallel_requests
     >>> from typing import List
-    >>> responses: parallel_requests.PostResponse = parallel_requests.post(
+    >>> responses: parallel_requests.ListResponse = parallel_requests.post(
     >>>     method_args=[{"url": "https://www.python.org"}],
     >>>     max_workers=10
     >>> )
@@ -17,7 +17,7 @@ POST HTTP request usage:
 GET HTTP request usage
     >>> import parallel_requests
     >>> from typing import List
-    >>> responses: parallel_requests.PostResponse = parallel_requests.get(
+    >>> responses: parallel_requests.ListResponse = parallel_requests.get(
     >>>     method_args=[{"url": "https://www.python.org"}],
     >>>     max_workers=10
     >>> )
@@ -27,7 +27,7 @@ GET HTTP request usage
 request function usage:
     >>> import parallel_requests
     >>> from typing import List
-    >>> responses: parallel_requests.PostResponse = parallel_requests.request(
+    >>> responses: parallel_requests.ListResponse = parallel_requests.request(
     >>>     method_args=[{"url": "https://www.python.org", "method": "post"}],
     >>>     max_workers=10
     >>> )
@@ -41,13 +41,13 @@ from typing import Any, Dict, List, Set
 
 import requests
 
-PostResponse = List[requests.Response]
+ListResponse = List[requests.Response]
 
 
 def request(
     method_args: List[Dict[str, Any]],
     max_workers: int = 5,
-) -> PostResponse:
+) -> ListResponse:
     """
     Sends a :class: `Request <Request>`.
 
@@ -57,7 +57,7 @@ def request(
     """
     futures_: Set[Future]
     data: requests.Response
-    loop_result: PostResponse = []
+    loop_result: ListResponse = []
 
     with futures.ProcessPoolExecutor(max_workers=max_workers) as executor:
         futures_ = {
@@ -75,7 +75,7 @@ def request(
 def post(
     method_args: List[Dict[str, Any]],
     max_workers: int = 5,
-) -> PostResponse:
+) -> ListResponse:
     """
     Parallelized HTTP post requests.
 
@@ -92,7 +92,7 @@ def post(
 def get(
     method_args: List[Dict[str, Any]],
     max_workers: int = 5,
-) -> PostResponse:
+) -> ListResponse:
     """
     Parallelized HTTP get requests.
 
@@ -109,7 +109,7 @@ def get(
 def options(
     method_args: List[Dict[str, Any]],
     max_workers: int = 5,
-) -> PostResponse:
+) -> ListResponse:
     """
     Parallelized HTTP options requests.
 
@@ -126,7 +126,7 @@ def options(
 def put(
     method_args: List[Dict[str, Any]],
     max_workers: int = 5,
-) -> PostResponse:
+) -> ListResponse:
     """
     Parallelized HTTP put requests.
 
@@ -143,7 +143,7 @@ def put(
 def patch(
     method_args: List[Dict[str, Any]],
     max_workers: int = 5,
-) -> PostResponse:
+) -> ListResponse:
     """
     Parallelized HTTP patch requests.
 
@@ -160,7 +160,7 @@ def patch(
 def delete(
     method_args: List[Dict[str, Any]],
     max_workers: int = 5,
-) -> PostResponse:
+) -> ListResponse:
     """
     Parallelized HTTP delete requests.
 
@@ -177,7 +177,7 @@ def delete(
 def head(
     method_args: List[Dict[str, Any]],
     max_workers: int = 5,
-) -> PostResponse:
+) -> ListResponse:
     """
     Parallelized HTTP head requests.
 

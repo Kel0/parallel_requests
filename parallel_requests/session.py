@@ -11,7 +11,7 @@ from typing import Any, Dict, List, Set
 
 import requests
 
-from .base_requests import PostResponse
+from .base_requests import ListResponse
 
 
 class Session(requests.Session):
@@ -20,7 +20,7 @@ class Session(requests.Session):
 
     def parallel_request(
         self, method_args: List[Dict[str, Any]], max_workers: int = 5
-    ) -> PostResponse:
+    ) -> ListResponse:
         """
         Sends a :class: `Request <Request>`.
 
@@ -30,7 +30,7 @@ class Session(requests.Session):
         """
         futures_: Set[Future]
         data: requests.Response
-        loop_result: PostResponse = []
+        loop_result: ListResponse = []
 
         with futures.ProcessPoolExecutor(max_workers=max_workers) as executor:
             futures_ = {
@@ -48,7 +48,7 @@ class Session(requests.Session):
         self,
         method_args: List[Dict[str, Any]],
         max_workers: int = 5,
-    ) -> PostResponse:
+    ) -> ListResponse:
         """
         Parallelized HTTP post requests.
 
@@ -65,7 +65,7 @@ class Session(requests.Session):
         self,
         method_args: List[Dict[str, Any]],
         max_workers: int = 5,
-    ) -> PostResponse:
+    ) -> ListResponse:
         """
         Parallelized HTTP get requests.
 
@@ -82,7 +82,7 @@ class Session(requests.Session):
         self,
         method_args: List[Dict[str, Any]],
         max_workers: int = 5,
-    ) -> PostResponse:
+    ) -> ListResponse:
         """
         Parallelized HTTP options requests.
 
@@ -99,7 +99,7 @@ class Session(requests.Session):
         self,
         method_args: List[Dict[str, Any]],
         max_workers: int = 5,
-    ) -> PostResponse:
+    ) -> ListResponse:
         """
         Parallelized HTTP put requests.
 
@@ -116,7 +116,7 @@ class Session(requests.Session):
         self,
         method_args: List[Dict[str, Any]],
         max_workers: int = 5,
-    ) -> PostResponse:
+    ) -> ListResponse:
         """
         Parallelized HTTP patch requests.
 
@@ -133,7 +133,7 @@ class Session(requests.Session):
         self,
         method_args: List[Dict[str, Any]],
         max_workers: int = 5,
-    ) -> PostResponse:
+    ) -> ListResponse:
         """
         Parallelized HTTP head requests.
 
@@ -150,7 +150,7 @@ class Session(requests.Session):
         self,
         method_args: List[Dict[str, Any]],
         max_workers: int = 5,
-    ) -> PostResponse:
+    ) -> ListResponse:
         """
         Parallelized HTTP delete requests.
 
