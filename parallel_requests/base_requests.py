@@ -1,8 +1,8 @@
 """
-Async requests Library
+Parallel requests Library
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Async requests is a library which parallelize your requests.
+Parallel requests is a library which parallelize your requests.
 
 POST HTTP request usage:
     >>> import parallel_requests
