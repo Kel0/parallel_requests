@@ -1,4 +1,15 @@
 # parallel_requests
+## Installation
+[pypi](https://pypi.org/project/parallel-requests/)
+```
+pip install parallel-requests
+```
+[github](https://github.com/Kel0/parallel_requests)
+```
+https://github.com/Kel0/parallel_requests.git
+cd parallel_requests
+pip install -e .
+```
 ## Perfomance
 See [benchmarks](https://github.com/Kel0/parallel_requests/tree/master/benchmarks)
 
