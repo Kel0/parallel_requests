@@ -15,9 +15,9 @@ def install(arg):
 @invoke.task(name="format")
 def format_(arg):
     autoflake = "autoflake -i --recursive --remove-all-unused-imports --remove-duplicate-keys --remove-unused-variables"
-    arg.run(f"{autoflake} {PACKAGE} tests benchmarks", echo=True)
-    arg.run(f"isort {PACKAGE} tests benchmarks", echo=True)
-    arg.run(f"black {PACKAGE} tests benchmarks", echo=True)
+    arg.run(f"{autoflake} {PACKAGE} tests benchmarks code_examples", echo=True)
+    arg.run(f"isort {PACKAGE} tests benchmarks code_examples", echo=True)
+    arg.run(f"black {PACKAGE} tests benchmarks code_examples", echo=True)
 
 
 @invoke.task(
@@ -28,11 +28,11 @@ def format_(arg):
 )
 def check(arg, style=True, typing=True):
     if style:
-        arg.run(f"flake8 {PACKAGE} tests benchmarks", echo=True)
-        arg.run(f"isort --diff {PACKAGE} tests benchmarks --check-only", echo=True)
-        arg.run(f"black --diff {PACKAGE} benchmarks --check", echo=True)
+        arg.run(f"flake8 {PACKAGE} tests benchmarks code_examples", echo=True)
+        arg.run(f"isort --diff {PACKAGE} tests benchmarks code_examples --check-only", echo=True)
+        arg.run(f"black --diff {PACKAGE} tests benchmarks code_examples --check", echo=True)
     if typing:
-        arg.run(f"mypy --no-incremental --cache-dir=/dev/null {PACKAGE} tests benchmarks", echo=True)
+        arg.run(f"mypy --no-incremental --cache-dir=/dev/null {PACKAGE} tests benchmarks code_examples", echo=True)
 
 
 @invoke.task
