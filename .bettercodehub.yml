@@ -1,0 +1,4 @@
+exclude:
+- /code_examples/*
+- /benchmarks/*
+- /docs/*

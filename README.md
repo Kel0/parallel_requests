@@ -1,4 +1,4 @@
-# parallel_requests
+# parallel_requests [![BCH compliance](https://bettercodehub.com/edge/badge/Kel0/parallel_requests?branch=master)](https://bettercodehub.com/)
 ## Installation
 [pypi](https://pypi.org/project/parallel-requests/)
 ```
