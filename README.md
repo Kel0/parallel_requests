@@ -1,4 +1,4 @@
-# parallel_requests
+# parallel_requests [![Build Status](https://cloud.drone.io/api/badges/Kel0/parallel_requests/status.svg?branch=master)](https://cloud.drone.io/Kel0/parallel_requests/)
 ## Installation
 [pypi](https://pypi.org/project/parallel-requests/)
 ```
