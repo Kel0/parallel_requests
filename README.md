@@ -1,11 +1,11 @@
 # parallel_requests [![Build Status](https://cloud.drone.io/api/badges/Kel0/parallel_requests/status.svg?branch=master)](https://cloud.drone.io/Kel0/parallel_requests/)
 ## Installation
 [pypi](https://pypi.org/project/parallel-requests/)
-```
+```commandline
 pip install parallel-requests
 ```
 [github](https://github.com/Kel0/parallel_requests)
-```
+```commandline
 https://github.com/Kel0/parallel_requests.git
 cd parallel_requests
 pip install -e .
@@ -15,7 +15,7 @@ See [benchmarks](https://github.com/Kel0/parallel_requests/tree/master/benchmark
 
 ## Usage
 POST HTTP request usage:
-```
+```python
 >>> import parallel_requests
 >>> from typing import List
 >>>
@@ -29,7 +29,7 @@ POST HTTP request usage:
 ```
 
 GET HTTP request usage
-```
+```python
 >>> import parallel_requests
 >>> from typing import List
 >>>
@@ -43,7 +43,7 @@ GET HTTP request usage
 ```
 
 request function usage:
-```
+```python
 >>> import parallel_requests
 >>> from typing import List
 >>>
